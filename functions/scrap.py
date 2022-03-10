@@ -1,7 +1,4 @@
-try:
-    from bs4 import BeautifulSoup
-except :
-    from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
     
 import requests
 import pandas as pd

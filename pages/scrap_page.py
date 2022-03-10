@@ -1,10 +1,5 @@
 import streamlit as st
 
-try:
-    from bs4 import BeautifulSoup
-except :
-    from BeautifulSoup import BeautifulSoup 
-
 
 import requests
 import pandas as pd
