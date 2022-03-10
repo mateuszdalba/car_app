@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+#import pickle5 as pickle
 import pickle
 from datetime import datetime
 
@@ -11,6 +12,7 @@ def show_predict_page():
     st.info('All information must be provided in order to correctly predict the price.')
 
     unique_marks = list(pd.read_pickle('data/unique_marks.pkl')[0])
+    #print(unique_marks)
 
     df1 = pd.DataFrame(unique_marks).reset_index()
     df1['index'] = df1['index']+1
@@ -32,18 +34,14 @@ def show_predict_page():
 
     car_mileage = st.slider(label='Car mileage [kilometers]',value=150000, min_value=1 , max_value=1000000, step=1)
 
-
-
-
-
     fuels = ('gasoline','gasoline+CNG','gasoline+LPG','diesel','hybrid')
     fuel = st.radio(label='Fuel',options=fuels, index=1)
     
     #Model
-    #loaded_model = pickle.load(open('models\model_cars.sav', 'rb'))
+    loaded_model = pickle.load(open('models\model_cars.sav', 'rb'))
 
-    with open('models\model_cars.sav', 'rb') as fh:
-        loaded_model = pickle.load(fh)
+    #with open('models\model_cars.sav', 'rb') as fh:
+    #    loaded_model = pickle.load(fh)
 
     button = st.button('Predict car price')
 
