@@ -38,7 +38,7 @@ def show_predict_page():
     fuel = st.radio(label='Fuel',options=fuels, index=1)
     
     #Model
-    loaded_model = pickle.load(open('models\model_cars.sav', 'rb'))
+    loaded_model = pickle.load(open('models/model_cars.sav', 'rb'))
 
     #with open('models\model_cars.sav', 'rb') as fh:
     #    loaded_model = pickle.load(fh)
