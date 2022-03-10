@@ -1,5 +1,5 @@
-import bs4
-from bs4 import BeautifulSoup
+#import bs4
+from bs4 import BeautifulSoup4
     
 import requests
 import pandas as pd
@@ -11,7 +11,7 @@ def scrap_basic_info(url = 'https://www.otomoto.pl/osobowe', page=1):
 
     path = url + '?page=' + str(page)
     r = requests.get(path)
-    soup = BeautifulSoup(r.content, features="lxml")
+    soup = BeautifulSoup4(r.content, features="lxml")
     
     number_of_cars_on_page = len(soup.find_all('article'))
     
@@ -55,7 +55,7 @@ def scrap_full_info(idx=0, basic_df=pd.DataFrame()):
     
     url = df_basic.iloc[idx]['link']
     r = requests.get(url)
-    soup = BeautifulSoup(r.content, features="lxml")
+    soup = BeautifulSoup4(r.content, features="lxml")
     #print(soup)
     
     #Main params
