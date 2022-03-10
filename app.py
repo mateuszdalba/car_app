@@ -18,8 +18,8 @@ page = st.sidebar.radio('Go To:',
                 ['Home',
                 'Predict price',
                 'Scrap data',
-                'Find profitable ads',
-                'Explore data'        
+                'Find profitable ads [Not Ready]',
+                'Explore data [Not Ready]'        
                  ])
 
 
@@ -58,7 +58,7 @@ if page == 'Predict price':
     )
 
     show_predict_page()
-elif page == 'Explore data':
+elif page == 'Explore data [Not Ready]':
 
     st.sidebar.title("Tutorial")
     st.sidebar.info(
@@ -99,7 +99,7 @@ elif page == 'Home':
 
     show_home_page()
 
-elif page == 'Find profitable ads':
+elif page == 'Find profitable ads [Not Ready]':
     
     show_profitable_page()
 
