@@ -3,6 +3,7 @@ import pandas as pd
 #import pickle5 as pickle
 import pickle
 from datetime import datetime
+import numpy as np
 
 
 def show_predict_page():
@@ -69,10 +70,10 @@ def show_predict_page():
         price = loaded_model.predict([[prod_year, parking_assist, car_cat, horse_power, automatic_gearbox,
                                     engine_capacity, car_mileage, fuel_gasoline,fuel_gasoline_cng,fuel_gasoline_lpg,fuel_diesel,fuel_hybrid]])
 
-        st.success(f"""The price of this car should be around: ***{price[0]}*** PLN """)
+        st.success(f"""The price of this car should be around: ***{np.round(price[0],2)}*** PLN """)
 
     
-        current_price = price[0]
+        current_price = np.round(price[0],2)
         curr_price = pd.DataFrame({"pred":[current_price]})
         curr_price.to_pickle('data/latest_price.pkl')
         
