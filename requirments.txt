@@ -2,5 +2,5 @@ streamlit
 pandas
 numpy
 datetime
-beautifulsoup4
+beautifulsoup4==4.8.2
 pickle
